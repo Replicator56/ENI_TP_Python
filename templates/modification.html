@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Pingouin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_formulaire.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Application d'observation des Pingouins</h1>
+    <h3>Modification des informations du pingouin n°={{ pingouin.id_pingouin }}</h3>
+
+    <form method="POST">
+        <label>Identifiant</label>
+        <input type="text" name="id_pingouin" value="{{ pingouin.id_pingouin }}" readonly>
+
+        <label>Espece</label>
+        <input type="text" name="espece" value="{{ pingouin.espece }}">
+
+        <label>Ile</label>
+        <input type="text" name="ile" value="{{ pingouin.ile }}">
+
+        <label>Longueur du bec (mm)</label>
+        <input type="number" step="0.1" name="longueur_bec" value="{{ pingouin.longueur_bec }}">
+
+        <label>Profondeur du bec (mm)</label>
+        <input type="number" step="0.1" name="profondeur_bec" value="{{ pingouin.profondeur_bec }}">
+
+        <label>Longueur de la nageoire (mm)</label>
+        <input type="number" step="0.1" name="longueur_nageoire" value="{{ pingouin.longueur_nageoire }}">
+
+        <label>Poids (g)</label>
+        <input type="number" step="0.1" name="poids" value="{{ pingouin.poids }}">
+
+        <label>Sexe</label>
+        <select name="sex">
+            <option value="Male" {% if pingouin.sex == 'Male' %}selected{% endif %}>Male</option>
+            <option value="Female" {% if pingouin.sex == 'Female' %}selected{% endif %}>Female</option>
+        </select>
+
+        <label>Année de naissance</label>
+        <input type="number" name="annee_naissance" value="{{ pingouin.annee_naissance }}">
+
+        <button type="submit" class="btn btn-edit">Valider</button>
+    </form>
+</div>
+</body>
+</html>

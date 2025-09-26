@@ -1,0 +1,101 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Conteneur */
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Titre */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #343a40;
+    color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+td.actions {
+    display: flex;
+    justify-content: flex-end; /* aligne les boutons à droite */
+    gap: 5px;                  /* espace entre les boutons */
+}
+
+/* Boutons */
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.btn-edit {
+    background-color: #007bff;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #a71d2a;
+}
+
+/* Messages flash */
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.flash-messages li.success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.flash-messages li.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+}

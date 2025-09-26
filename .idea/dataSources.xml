@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="PINGOUINS@localhost" uuid="a5bdc53d-67f6-4064-877e-1674a93ee4ea">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost;database=PINGOUINS</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

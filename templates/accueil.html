@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Application d'observation des Pingouins</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_accueil.css') }}">
+</head>
+
+<!--Pour afficher le message flash dans le template-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<ul class="flash-messages">
+    {% for category, message in messages %}
+        <li class="{{category}}">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+
+<body>
+<div class="container">
+    <h1>Application d'observation des Pingouins</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Espece</th>
+                <th>Ile</th>
+                <th>Longueur Bec (mm)</th>
+                <th>Profondeur Bec (mm)</th>
+                <th>Longueur Nageoire (mm)</th>
+                <th>Poids (G)</th>
+                <th>Sexe</th>
+                <th>Annee Naissance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in pingouins %}
+            <tr>
+                <td>{{ p.id_pingouin }}</td>
+                <td>{{ p.espece }}</td>
+                <td>{{ p.ile }}</td>
+                <td>{{ p.longueur_bec }}</td>
+                <td>{{ p.profondeur_bec }}</td>
+                <td>{{ p.longueur_nageoire }}</td>
+                <td>{{ p.poids }}</td>
+                <td>{{ p.sex or 'Non renseigné' }}</td>
+                <td>{{ p.annee_naissance }}</td>
+                <td class="actions">
+                    <a href="{{ url_for('modifier_pingouin', id_pingouin=p.id_pingouin) }}"
+                       class="btn btn-edit">Modifier</a>
+                    <a href="{{ url_for('supprimer_pingouin', id_pingouin=p.id_pingouin) }}"
+                       onclick="return confirm('Voulez-vous vraiment supprimer ce pingouin ?');"
+                       class="btn btn-delete">Supprimer</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
