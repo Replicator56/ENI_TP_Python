@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Définition de l'encodage des caractères pour supporter les accents et caractères spéciaux -->
     <meta charset="UTF-8">
+
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
     <title>Application d'observation des Pingouins</title>
+
+    <!-- Lien vers la feuille de style CSS (ici, style_accueil.css dans le dossier static) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style_accueil.css') }}">
 </head>
 
-<!--Pour afficher le message flash dans le template-->
+<!-- SECTION FLASH MESSAGES -->
+<!-- Permet d'afficher des messages temporaires (flash messages) envoyés par Flask -->
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 <ul class="flash-messages">
     {% for category, message in messages %}
+        <!-- Chaque message est affiché dans un <li> et la classe correspond à la catégorie (success, error, etc.) -->
         <li class="{{category}}">{{ message }}</li>
     {% endfor %}
 </ul>
@@ -20,10 +27,14 @@
 
 <body>
 <div class="container">
+    <!-- Titre principal de la page -->
     <h1>Application d'observation des Pingouins</h1>
+
+    <!-- Tableau affichant les informations sur les pingouins -->
     <table>
         <thead>
             <tr>
+                <!-- Définition des colonnes du tableau -->
                 <th>#</th>
                 <th>Espece</th>
                 <th>Ile</th>
@@ -37,8 +48,10 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Boucle Jinja2 pour afficher chaque pingouin de la liste 'pingouins' -->
             {% for p in pingouins %}
             <tr>
+                <!-- Affichage des données de chaque pingouin -->
                 <td>{{ p.id_pingouin }}</td>
                 <td>{{ p.espece }}</td>
                 <td>{{ p.ile }}</td>
@@ -46,11 +59,17 @@
                 <td>{{ p.profondeur_bec }}</td>
                 <td>{{ p.longueur_nageoire }}</td>
                 <td>{{ p.poids }}</td>
+                <!-- Si le sexe n'est pas renseigné, affiche 'Non renseigné' -->
                 <td>{{ p.sex or 'Non renseigné' }}</td>
                 <td>{{ p.annee_naissance }}</td>
+
+                <!-- Actions possibles sur chaque pingouin : modifier ou supprimer -->
                 <td class="actions">
+                    <!-- Lien vers la route Flask pour modifier le pingouin -->
                     <a href="{{ url_for('modifier_pingouin', id_pingouin=p.id_pingouin) }}"
                        class="btn btn-edit">Modifier</a>
+
+                    <!-- Lien pour supprimer le pingouin avec confirmation via JavaScript -->
                     <a href="{{ url_for('supprimer_pingouin', id_pingouin=p.id_pingouin) }}"
                        onclick="return confirm('Voulez-vous vraiment supprimer ce pingouin ?');"
                        class="btn btn-delete">Supprimer</a>

@@ -1,146 +1,161 @@
-/* Reset et base */
+/* =========================================
+   RESET ET BASE
+   ========================================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;           /* Supprime les marges par défaut de tous les éléments */
+    padding: 0;          /* Supprime les paddings par défaut */
+    box-sizing: border-box; /* Inclut padding et bordure dans la largeur/hauteur */
 }
 
+/* Style général du corps de page */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; /* Police moderne et lisible */
+    background-color: #f5f5f5;   /* Fond gris clair */
+    color: #333;                 /* Texte gris foncé */
+    line-height: 1.6;            /* Hauteur de ligne confortable pour lecture */
 }
 
+/* Conteneur principal */
 .container {
-    max-width: 600px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    max-width: 600px;                     /* Largeur maximale pour un bon confort de lecture */
+    margin: 40px auto;                    /* Centré horizontalement avec un espace vertical */
+    background: white;                    /* Fond blanc */
+    border-radius: 8px;                   /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour effet "carte" */
+    overflow: hidden;                     /* Empêche le contenu de dépasser les bords arrondis */
 }
 
-/* En-têtes */
+/* =========================================
+   EN-TÊTES
+   ========================================= */
 h1 {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 400;
-    color: #2c3e50;
-    padding: 30px 20px 10px;
-    margin: 0;
+    text-align: center;        /* Centre le texte */
+    font-size: 28px;           /* Taille du texte */
+    font-weight: 400;          /* Poids normal */
+    color: #2c3e50;            /* Bleu/gris foncé pour contraste */
+    padding: 30px 20px 10px;   /* Espace autour du texte (haut, gauche/droite, bas) */
+    margin: 0;                  /* Supprime la marge par défaut */
 }
 
 h3 {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    color: #7f8c8d;
-    padding: 0 20px 30px;
-    margin: 0;
+    text-align: center;        /* Centre le texte */
+    font-size: 18px;           /* Taille plus petite que h1 */
+    font-weight: 400;          /* Poids normal */
+    color: #7f8c8d;            /* Gris moyen */
+    padding: 0 20px 30px;      /* Espace autour du texte (haut, gauche/droite, bas) */
+    margin: 0;                  /* Supprime la marge par défaut */
 }
 
-/* Formulaire */
+/* =========================================
+   FORMULAIRES
+   ========================================= */
 form {
-    padding: 0 40px 40px;
+    padding: 0 40px 40px;      /* Espace interne autour du formulaire (gauche/droite/bas) */
 }
 
-/* Labels */
+/* Labels des champs */
 label {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    color: #2c3e50;
-    margin-bottom: 8px;
-    margin-top: 20px;
+    display: block;             /* Chaque label occupe toute la largeur */
+    font-size: 14px;            /* Taille du texte */
+    font-weight: 500;           /* Légèrement gras pour distinction */
+    color: #2c3e50;             /* Couleur sombre */
+    margin-bottom: 8px;         /* Espace sous le label */
+    margin-top: 20px;           /* Espace au-dessus du label pour espacement entre champs */
 }
 
+/* Supprime le margin-top pour le premier label */
 label:first-of-type {
     margin-top: 0;
 }
 
-/* Inputs et select */
+/* Inputs texte et numériques et selects */
 input[type="text"],
 input[type="number"],
 select {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    background-color: white;
-    transition: border-color 0.2s ease;
+    width: 100%;                /* Occupent toute la largeur du conteneur */
+    padding: 12px 16px;         /* Espace interne confortable */
+    border: 1px solid #ddd;     /* Bordure gris clair */
+    border-radius: 4px;         /* Coins arrondis */
+    font-size: 14px;            /* Taille du texte */
+    background-color: white;    /* Fond blanc */
+    transition: border-color 0.2s ease; /* Transition douce pour le focus */
 }
 
+/* Focus sur les inputs et select */
 input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+    outline: none;                       /* Supprime le contour par défaut */
+    border-color: #3498db;               /* Change la couleur de bordure au focus */
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1); /* Ombre bleue légère pour focus */
 }
 
-/* Input readonly */
+/* Input en lecture seule */
 input[readonly] {
-    background-color: #f8f9fa;
-    color: #6c757d;
-    cursor: not-allowed;
+    background-color: #f8f9fa;   /* Fond gris clair */
+    color: #6c757d;              /* Texte gris */
+    cursor: not-allowed;          /* Curseur interdit */
 }
 
-/* Select spécifique */
+/* Select personnalisé avec flèche */
 select {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 12px center;
+    cursor: pointer;              /* Curseur pointeur */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e"); /* Flèche */
+    background-position: right 12px center; /* Position de la flèche */
     background-repeat: no-repeat;
     background-size: 16px;
-    padding-right: 40px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    padding-right: 40px;          /* Espace pour flèche */
+    -webkit-appearance: none;     /* Supprime style par défaut sur Webkit */
+    -moz-appearance: none;        /* Supprime style par défaut sur Firefox */
+    appearance: none;             /* Supprime style par défaut */
 }
 
-/* Bouton */
+/* =========================================
+   BOUTONS
+   ========================================= */
 .btn {
     display: inline-block;
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    padding: 12px 24px;           /* Espace interne */
+    background-color: #007bff;    /* Bleu */
+    color: white;                 /* Texte blanc */
+    border: none;                 /* Pas de bordure */
+    border-radius: 4px;           /* Coins arrondis */
     font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    margin-top: 30px;
+    font-weight: 500;             /* Texte semi-gras */
+    cursor: pointer;              /* Curseur pointeur */
+    transition: background-color 0.2s ease; /* Transition au survol */
+    margin-top: 30px;             /* Espace au-dessus du bouton */
 }
 
+/* Hover et active */
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #0056b3;    /* Bleu foncé au survol */
 }
 
 .btn:active {
-    transform: translateY(1px);
+    transform: translateY(1px);   /* Effet "pressé" au clic */
 }
 
-/* Responsive */
+/* =========================================
+   RESPONSIVE
+   ========================================= */
 @media (max-width: 768px) {
     .container {
-        margin: 20px;
-        max-width: none;
+        margin: 20px;             /* Réduit les marges sur mobile */
+        max-width: none;          /* Largeur fluide */
     }
 
     form {
-        padding: 0 20px 30px;
+        padding: 0 20px 30px;     /* Réduit padding pour mobile */
     }
 
     h1 {
-        font-size: 24px;
-        padding: 20px 15px 5px;
+        font-size: 24px;          /* Taille réduite pour mobile */
+        padding: 20px 15px 5px;   /* Padding adapté */
     }
 
     h3 {
-        font-size: 16px;
-        padding: 0 15px 20px;
+        font-size: 16px;          /* Taille réduite */
+        padding: 0 15px 20px;     /* Padding adapté */
     }
 }

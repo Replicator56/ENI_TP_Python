@@ -1,101 +1,153 @@
-/* Style général */
+/* =========================================
+   STYLE GÉNÉRAL DE LA PAGE
+   ========================================= */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 20px;
+    font-family: Arial, sans-serif;  /* Police simple et lisible */
+    background-color: #f8f9fa;       /* Fond gris clair pour contraste doux */
+    margin: 0;                        /* Supprime les marges par défaut du navigateur */
+    padding: 20px;                    /* Ajoute un espace autour du contenu */
 }
 
-/* Conteneur */
+/* =========================================
+   CONTENEUR PRINCIPAL
+   ========================================= */
 .container {
-    width: 90%;
-    margin: auto;
+    width: 90%;       /* Limite la largeur à 90% de la fenêtre */
+    margin: auto;     /* Centre le conteneur horizontalement */
 }
 
-/* Titre */
+/* =========================================
+   TITRES
+   ========================================= */
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #222;
+    text-align: center;    /* Centre le texte */
+    margin-bottom: 20px;   /* Espace sous le titre */
+    color: #222;           /* Couleur sombre pour lisibilité */
 }
 
-/* Table */
+/* =========================================
+   TABLEAUX
+   ========================================= */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    border-radius: 6px;
-    overflow: hidden;
+    width: 100%;                             /* Table prend toute la largeur disponible */
+    border-collapse: collapse;               /* Fusionne les bordures pour un rendu propre */
+    background: white;                       /* Fond blanc */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);  /* Légère ombre pour effet "carte" */
+    border-radius: 6px;                      /* Coins arrondis */
+    overflow: hidden;                        /* Empêche le contenu de dépasser les coins arrondis */
 }
 
 thead {
-    background-color: #343a40;
-    color: white;
+    background-color: #343a40;   /* Fond sombre pour le header */
+    color: white;                /* Texte blanc */
 }
 
 th, td {
-    padding: 12px 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+    padding: 12px 15px;          /* Espace interne */
+    text-align: center;          /* Centre le texte */
+    border-bottom: 1px solid #ddd; /* Ligne de séparation entre les lignes */
 }
 
+/* Alternance des couleurs pour les lignes du tableau */
 tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2;   /* Gris clair pour les lignes paires */
 }
 
+/* Effet hover sur les lignes */
 tbody tr:hover {
-    background-color: #e9ecef;
+    background-color: #e9ecef;    /* Gris légèrement plus foncé au survol */
 }
+
+/* Colonne Actions (boutons) */
 td.actions {
-    display: flex;
-    justify-content: flex-end; /* aligne les boutons à droite */
-    gap: 5px;                  /* espace entre les boutons */
+    display: flex;                /* Utilise flexbox pour aligner les boutons */
+    justify-content: flex-end;    /* Aligne les boutons à droite */
+    gap: 5px;                     /* Espace entre les boutons */
 }
 
-/* Boutons */
+/* =========================================
+   BOUTONS
+   ========================================= */
 .btn {
-    padding: 6px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-    transition: background 0.3s ease;
+    padding: 6px 12px;           /* Espace interne */
+    border-radius: 4px;          /* Coins arrondis */
+    text-decoration: none;       /* Supprime le soulignement des liens */
+    color: white;                /* Texte blanc */
+    font-size: 14px;             /* Taille du texte */
+    transition: background 0.3s ease; /* Animation douce au survol */
 }
 
+/* Bouton Modifier */
 .btn-edit {
-    background-color: #007bff;
+    background-color: #007bff;   /* Bleu */
 }
 
 .btn-edit:hover {
-    background-color: #0056b3;
+    background-color: #0056b3;   /* Bleu foncé au survol */
 }
 
+/* Bouton Supprimer */
 .btn-delete {
-    background-color: #dc3545;
+    background-color: #dc3545;   /* Rouge */
 }
 
 .btn-delete:hover {
-    background-color: #a71d2a;
+    background-color: #a71d2a;   /* Rouge foncé au survol */
 }
 
-/* Messages flash */
+/* =========================================
+   MESSAGES FLASH (succès / erreur)
+   ========================================= */
 .flash-messages {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 15px;
+    list-style: none;            /* Supprime les puces */
+    padding: 0;                  /* Supprime le padding */
+    margin-bottom: 15px;         /* Espace en dessous */
 }
 
+/* Message de succès */
 .flash-messages li.success {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 10px;
-    border-radius: 4px;
+    background-color: #d4edda;   /* Vert clair */
+    color: #155724;              /* Texte vert foncé */
+    padding: 10px;               /* Espace interne */
+    border-radius: 4px;          /* Coins arrondis */
 }
 
+/* Message d'erreur */
 .flash-messages li.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 10px;
-    border-radius: 4px;
+    background-color: #f8d7da;   /* Rouge clair */
+    color: #721c24;              /* Texte rouge foncé */
+    padding: 10px;               /* Espace interne */
+    border-radius: 4px;          /* Coins arrondis */
+}
+
+/* =========================================
+   FORMULAIRES
+   ========================================= */
+form {
+    background: white;           /* Fond blanc pour les formulaires */
+    padding: 20px;               /* Espace interne */
+    border-radius: 6px;          /* Coins arrondis */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Ombre légère */
+    max-width: 600px;            /* Largeur maximale */
+    margin: auto;                /* Centre le formulaire */
+    display: flex;
+    flex-direction: column;      /* Les champs s'empilent verticalement */
+    gap: 15px;                   /* Espace entre les champs */
+}
+
+form label {
+    font-weight: bold;           /* Labels en gras */
+}
+
+form input, form select, form button {
+    padding: 8px 10px;           /* Espace interne pour tous les champs */
+    border: 1px solid #ccc;      /* Bordure grise claire */
+    border-radius: 4px;          /* Coins arrondis */
+    font-size: 14px;
+}
+
+/* Bouton de validation dans le formulaire */
+form button.btn-edit {
+    align-self: flex-start;      /* Aligne le bouton à gauche */
+    cursor: pointer;             /* Curseur pointeur au survol */
 }
